@@ -290,7 +290,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <cylinder length="0.14" radius="0.05"/>
+        <cylinder length="0.14" radius="0.05"/> 
       </geometry>
       <material name="Grey"/>
     </visual>
@@ -307,7 +307,7 @@
   <joint name="tool_tip_joint" type="fixed">
     <parent link="iiwa_link_ee" />
     <child link = "tool_link_ee" />
-    <origin xyz="0 0 0.24" rpy="0 0 0" />   
+    <origin xyz="0 0 0.20" rpy="0 0 0" />   
   </joint>
 
   <!--  CUSTOM: END LINK -->

@@ -3,9 +3,11 @@
   <arg name = "node_name"          default = "royale_camera"/>
 
   <!-- static TF publisher -->
-  <node pkg = "tf" type = "static_transform_publisher" name = "$(arg node_name)_static_tf"
-        args = "0 0 0 1.57 0 -1.57 $(arg node_name)_link $(arg node_name)_optical_frame 100" />
+  <!-- <node pkg = "tf" type = "static_transform_publisher" name = "$(arg node_name)_static_tf"
+        args = "0 0 0 1.57 0 -1.57 $(arg node_name)_link $(arg node_name)_optical_frame 100" /> -->
 
+  <node pkg = "tf" type = "static_transform_publisher" name = "$(arg node_name)_static_tf"
+        args = "0 0 0 0 0 0 iiwa_link_7 $(arg node_name)_optical_frame 100" />
   <!-- nodelet manager -->
   <node pkg = "nodelet" type = "nodelet" name = "$(arg node_name)" args = "manager" output = "screen"/>
 
@@ -15,4 +17,7 @@
         respawn = "true" output = "screen">
     <param name = "node_name"          type = "str"    value = "$(arg node_name)"/>
   </node>
+
+  <!-- launch cloud filtering -->
+  <!-- <node pkg="cloud_filtering" type="sensor_node" name="filtering_node"></node> -->
 </launch>
